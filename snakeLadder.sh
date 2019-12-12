@@ -2,11 +2,12 @@
 
 position=0
 end_Position=100
+diesCount=0
 
 while [ $position -lt $end_Position ]
 do
 	diesValue=$((RANDOM%6+1))
-#	extraWinValue=$(($position+$diesValue))
+	((diesCount++))
 
 	option=$((RANDOM%3))
 	case $option in
@@ -30,3 +31,5 @@ do
 	fi
 	echo "Position --> $position"
 done
+
+echo "Number of time dies role--> $diesCount"
